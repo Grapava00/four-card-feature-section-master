@@ -1,0 +1,14 @@
+:root {
+  --clr-accent-1: 0, 78%, 62%;
+  --clr-accent-2: 180, 62%, 55%;
+  --clr-accent-3: 34, 97%, 64%;
+  --clr-accent-4: 212, 86%, 64%;
+
+  --clr-neutral-hsl-100: 0, 0%, 98%;
+  --clr-neutral-hsl-200: 229, 6%, 66%;
+  --clr-neutral-hsl-300: 234, 12%, 34%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+}
