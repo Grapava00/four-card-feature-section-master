@@ -1,6 +1,6 @@
 :root {
-  --clr-accent-1: 0, 78%, 62%;
-  --clr-accent-2: 180, 62%, 55%;
+  --clr-accent-1: 180, 62%, 55%;
+  --clr-accent-2: 0, 78%, 62%;
   --clr-accent-3: 34, 97%, 64%;
   --clr-accent-4: 212, 86%, 64%;
 
@@ -11,6 +11,19 @@
   --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
   --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
   --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+
+  --fw-regular: 200;
+  --fw-bold: 400;
+  --fw-black: 600;
+
+  --fs-400: 1.125rem;
+  --fs-500: 1.25rem;
+  --fs-600: 1.5rem;
+  --fs-700: 1.75rem;
+  --fs-800: 3rem;
+  --fs-900: 5rem;
+
+  --font-family-default: "Poppins", sans-serif;
 }
 
 /*
@@ -35,6 +48,11 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: var(--font-family-default);
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  background-color: var(--clr-neutral-100);
 }
 /*
     5. Improve media defaults
@@ -67,4 +85,103 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+/* utilities */
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+main {
+  width: 100vw;
+}
+
+.introduction {
+  text-align: center;
+  font-size: var(--fs-800);
+  margin-bottom: 80px;
+}
+
+h1 {
+  font-size: var(--fs-800);
+  color: var(--clr-neutral-200);
+  font-weight: var(--fw-regular);
+}
+
+.introduction p:first-of-type {
+  color: var(--clr-neutral-300);
+  font-weight: var(--fw-bold);
+}
+
+.introduction p:last-of-type {
+  color: var(--clr-neutral-200);
+  max-width: 560px;
+  width: 100%;
+  font-size: var(--fs-400);
+  margin: 1rem auto;
+}
+
+@media (max-width: 600px) {
+  h1,
+  .introduction p {
+    font-size: var(--fs-400);
+  }
+
+  main {
+    margin-top: 50px;
+    padding: 0 30px 20px;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.couple {
+  display: grid;
+  gap: 30px;
+}
+
+.card {
+  max-width: 420px;
+  width: 100%;
+  height: 250px;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: -1px 10px 9px -1px rgba(16, 134, 219, 0.13);
+  -webkit-box-shadow: -1px 10px 9px -1px rgba(16, 134, 219, 0.13);
+  -moz-box-shadow: -1px 10px 9px -1px rgba(16, 134, 219, 0.13);
+  border-top: 3px solid hsl(var(--item-color), 0.9);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card[data-item-type="accent-1"] {
+  --item-color: var(--clr-accent-1);
+}
+.card[data-item-type="accent-2"] {
+  --item-color: var(--clr-accent-2);
+}
+.card[data-item-type="accent-3"] {
+  --item-color: var(--clr-accent-3);
+}
+.card[data-item-type="accent-4"] {
+  --item-color: var(--clr-accent-4);
+}
+
+h2 {
+  color: var(--clr-neutral-300);
+}
+
+.description {
+  color: var(--clr-neutral-200);
+  margin-top: 10px;
 }
